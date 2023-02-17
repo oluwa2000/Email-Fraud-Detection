@@ -1,3 +1,10 @@
+import psycopg2
+import pandas as pd
+import os.path
+import numpy as np
+import ast
+from ast import literal_eval
+
 def dataCollectionOne():
     connectionString = "dbname='dpbolat19_db' user = 'dpbolat19' host='tools.cs.earlham.edu' "
     connection = psycopg2.connect(connectionString)
@@ -17,3 +24,5 @@ def dataCollectionOne():
         
     data = pd.DataFrame(list(zip(email_info,Class)),columns = ['Email Info', 'Class'])
     return data
+
+dataCollectionOne()
